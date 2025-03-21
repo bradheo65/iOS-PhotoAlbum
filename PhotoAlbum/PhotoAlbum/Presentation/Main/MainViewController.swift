@@ -15,5 +15,12 @@ final class MainViewController: UIViewController {
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
         
+        Task {
+            do {
+                try await viewModel.fetchImageList(page: "1", perPage: "2")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
