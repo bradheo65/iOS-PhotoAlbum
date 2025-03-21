@@ -6,21 +6,39 @@
 //
 
 import UIKit
+import Combine
 
 final class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
     
+    private let input: PassthroughSubject<MainViewModel.Input, Never> = .init()
+    private var cancellables: Set<AnyCancellable> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+
+        setupBinding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+        input.send(.viewWillAppear)
+    }
+}
+
+private extension MainViewController {
+    func setupBinding() {
+        let output = viewModel.transform(input: input.eraseToAnyPublisher())
         
-        Task {
-            do {
-                try await viewModel.fetchImageList(page: "1", perPage: "2")
-            } catch {
+        output.sink { [weak self] event in
+            switch event {
+            case .getImageList(let array):
+                print(array)
+            case .failure(let error):
                 print(error.localizedDescription)
             }
-        }
+        }.store(in: &cancellables)
     }
 }
