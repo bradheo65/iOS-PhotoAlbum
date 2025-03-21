@@ -14,7 +14,7 @@
 		A3B67F0E2D8CE1C20081C12A /* Exceptions for "PhotoAlbum" folder in "PhotoAlbum" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resource/Info.plist,
 			);
 			target = A3B67EFB2D8CE1C10081C12A /* PhotoAlbum */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B99296K282;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoAlbum/Info.plist;
+				INFOPLIST_FILE = PhotoAlbum/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -179,7 +179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B99296K282;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoAlbum/Info.plist;
+				INFOPLIST_FILE = PhotoAlbum/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
